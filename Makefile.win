@@ -1,0 +1,73 @@
+# Project: HHunt
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = obj/main.o obj/TGUIscene.o obj/SceneHandler.o obj/login_signup_sc.o obj/Menu.o obj/InGame_sc.o obj/GameCore.o obj/sqlite3.o obj/sever_core.o obj/db_core.o obj/fetchurl.o obj/GameEnd_sc.o obj/myWord_sc.o obj/ErrorHandler.o obj/High_score_sc.o obj/Intro_sc.o
+LINKOBJ  = obj/main.o obj/TGUIscene.o obj/SceneHandler.o obj/login_signup_sc.o obj/Menu.o obj/InGame_sc.o obj/GameCore.o obj/sqlite3.o obj/sever_core.o obj/db_core.o obj/fetchurl.o obj/GameEnd_sc.o obj/myWord_sc.o obj/ErrorHandler.o obj/High_score_sc.o obj/Intro_sc.o
+LIBS     = -L"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/x86_64-w64-mingw32/lib32" -L"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/lib" -L"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc  -lws2_32  -lwsock32  src/libs/win32/libtgui.a  src/libs/win32/libFLAC.a src/libs/win32/libfreetype.a src/libs/win32/libjpeg.a src/libs/win32/libogg.a src/libs/win32/libopenal32.a src/libs/win32/libsfml-audio.a src/libs/win32/libsfml-graphics.a src/libs/win32/libsfml-main.a src/libs/win32/libsfml-network.a src/libs/win32/libsfml-system.a src/libs/win32/libsfml-window.a  src/libs/win32/libvorbis.a src/libs/win32/libvorbisenc.a src/libs/win32/libvorbisfile.a -m32 -g3
+INCS     = -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/include" -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/x86_64-w64-mingw32/include" -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"./src/include"
+CXXINCS  = -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/include" -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/x86_64-w64-mingw32/include" -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"G:/Program Files/Dev-Cpp_v5.11_TDM_4.9.2/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"./src/include"
+BIN      = win32/HHunt_debug.exe
+CXXFLAGS = $(CXXINCS) -m32 -std=c++11 -g3 -std=c++11 -fpermissive
+CFLAGS   = $(INCS) -m32 -std=c++11 -g3 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+obj/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o obj/main.o $(CXXFLAGS)
+
+obj/TGUIscene.o: src/TGUIscene.cpp
+	$(CPP) -c src/TGUIscene.cpp -o obj/TGUIscene.o $(CXXFLAGS)
+
+obj/SceneHandler.o: src/SceneHandler.cpp
+	$(CPP) -c src/SceneHandler.cpp -o obj/SceneHandler.o $(CXXFLAGS)
+
+obj/login_signup_sc.o: src/login_signup_sc.cpp
+	$(CPP) -c src/login_signup_sc.cpp -o obj/login_signup_sc.o $(CXXFLAGS)
+
+obj/Menu.o: src/Menu.cpp
+	$(CPP) -c src/Menu.cpp -o obj/Menu.o $(CXXFLAGS)
+
+obj/InGame_sc.o: src/InGame_sc.cpp
+	$(CPP) -c src/InGame_sc.cpp -o obj/InGame_sc.o $(CXXFLAGS)
+
+obj/GameCore.o: src/GameCore.cpp
+	$(CPP) -c src/GameCore.cpp -o obj/GameCore.o $(CXXFLAGS)
+
+obj/sqlite3.o: src/sqlite3.c
+	$(CC) -c src/sqlite3.c -o obj/sqlite3.o $(CFLAGS)
+
+obj/sever_core.o: src/sever_core.cpp
+	$(CPP) -c src/sever_core.cpp -o obj/sever_core.o $(CXXFLAGS)
+
+obj/db_core.o: src/db_core.cpp
+	$(CPP) -c src/db_core.cpp -o obj/db_core.o $(CXXFLAGS)
+
+obj/fetchurl.o: src/fetchurl.cpp
+	$(CPP) -c src/fetchurl.cpp -o obj/fetchurl.o $(CXXFLAGS)
+
+obj/GameEnd_sc.o: src/GameEnd_sc.cpp
+	$(CPP) -c src/GameEnd_sc.cpp -o obj/GameEnd_sc.o $(CXXFLAGS)
+
+obj/myWord_sc.o: src/myWord_sc.cpp
+	$(CPP) -c src/myWord_sc.cpp -o obj/myWord_sc.o $(CXXFLAGS)
+
+obj/ErrorHandler.o: src/ErrorHandler.cpp
+	$(CPP) -c src/ErrorHandler.cpp -o obj/ErrorHandler.o $(CXXFLAGS)
+
+obj/High_score_sc.o: src/High_score_sc.cpp
+	$(CPP) -c src/High_score_sc.cpp -o obj/High_score_sc.o $(CXXFLAGS)
+
+obj/Intro_sc.o: src/Intro_sc.cpp
+	$(CPP) -c src/Intro_sc.cpp -o obj/Intro_sc.o $(CXXFLAGS)

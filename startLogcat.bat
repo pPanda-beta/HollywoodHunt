@@ -1,0 +1,1 @@
+start adb logcat -s sfml-error tgui-activity
